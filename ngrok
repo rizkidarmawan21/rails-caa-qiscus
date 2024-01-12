@@ -1,0 +1,1 @@
+ngrok tunnel --label edge=edghts_2aiBRoZRftOBfnFDHkrruUDbVQy http://localhost:3000

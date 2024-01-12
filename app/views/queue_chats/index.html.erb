@@ -1,0 +1,14 @@
+<p style="color: green"><%= notice %></p>
+
+<h1>Queue chats</h1>
+
+<div id="queue_chats">
+  <% @queue_chats.each do |queue_chat| %>
+    <%= render queue_chat %>
+    <p>
+      <%= link_to "Show this queue chat", queue_chat %>
+    </p>
+  <% end %>
+</div>
+
+<%= link_to "New queue chat", new_queue_chat_path %>

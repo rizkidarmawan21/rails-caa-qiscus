@@ -1,0 +1,10 @@
+<p style="color: green"><%= notice %></p>
+
+<%= render @queue_chat %>
+
+<div>
+  <%= link_to "Edit this queue chat", edit_queue_chat_path(@queue_chat) %> |
+  <%= link_to "Back to queue chats", queue_chats_path %>
+
+  <%= button_to "Destroy this queue chat", @queue_chat, method: :delete %>
+</div>

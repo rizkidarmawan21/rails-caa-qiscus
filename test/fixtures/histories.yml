@@ -1,0 +1,11 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  queue_chat: one
+  agent: one
+  assigned_at: 2024-01-09 13:36:33
+
+two:
+  queue_chat: two
+  agent: two
+  assigned_at: 2024-01-09 13:36:33
