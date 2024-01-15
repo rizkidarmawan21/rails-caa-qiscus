@@ -1,0 +1,2 @@
+module CaaWebhookLogsHelper
+end

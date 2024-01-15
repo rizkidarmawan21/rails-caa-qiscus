@@ -4,12 +4,14 @@ class AgentsController < ApplicationController
 
   def test
     response_body = QiscusService.getAgents
+    response_body = JSON.parse(response_body)
 
-    render json: response_body
+    render json: response_body["data"]["agents"]
   end
 
   # GET /agents or /agents.json
   def index
+    AgentService.sincronize
     @agents = Agent.all
   end
 

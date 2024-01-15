@@ -19,4 +19,14 @@
     <%= queue_chat.name %>
   </p>
 
+  <p>
+    <strong>Agent:</strong>
+    <%= queue_chat.history&.agent&.name %>
+  </p>
+
+  <p>
+    <strong>Resolved:</strong>
+    <%= queue_chat.history&.is_resolve %>
+  </p>
+
 </div>

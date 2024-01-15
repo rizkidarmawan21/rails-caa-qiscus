@@ -57,6 +57,27 @@ class QueueChatsController < ApplicationController
     end
   end
 
+  def resolve
+    @history = History.where(queue_chat_id: params[:queue_chat_id])
+    @queue_chat = QueueChat.find(params[:queue_chat_id])
+    resolve =  QiscusService.resolve(@queue_chat.room_id)
+    if resolve
+      @save_history =  @history.update(is_resolve: true)
+
+      if @save_history
+        #  redirect to queue chat index
+         redirect_to queue_chats_url, notice: "Queue chat was successfully resolved."
+      else
+         redirect_to queue_chats_url, notice: "Queue chat was failed, maybee queue has been resolved."
+      end
+
+    else
+      render json: {message: "Resolve Failed", status: 400}
+    end
+
+
+  end
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_queue_chat

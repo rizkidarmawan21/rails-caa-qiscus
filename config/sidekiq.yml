@@ -1,0 +1,4 @@
+:schedule:
+  every_second_job:
+    cron: "* * * * * UTC"
+    class: "CobaJob"

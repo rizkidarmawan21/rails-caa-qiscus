@@ -1,0 +1,14 @@
+<p style="color: green"><%= notice %></p>
+
+<h1>Caa webhook logs</h1>
+
+<div id="caa_webhook_logs">
+  <% @caa_webhook_logs.each do |caa_webhook_log| %>
+    <%= render caa_webhook_log %>
+    <p>
+      <%= link_to "Show this caa webhook log", caa_webhook_log %>
+    </p>
+  <% end %>
+</div>
+
+<%= link_to "New caa webhook log", new_caa_webhook_log_path %>

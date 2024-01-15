@@ -1,4 +1,5 @@
 class History < ApplicationRecord
-  belongs_to :queue_chat
+  # has_one :agent
   belongs_to :agent
+  belongs_to :queue_chat
 end

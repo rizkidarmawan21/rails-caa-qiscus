@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.1].define(version: 2024_01_12_024116) do
+ActiveRecord::Schema[7.1].define(version: 2024_01_14_082602) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -21,6 +21,13 @@ ActiveRecord::Schema[7.1].define(version: 2024_01_12_024116) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.integer "limit"
+    t.boolean "is_resolve"
+  end
+
+  create_table "caa_webhook_logs", force: :cascade do |t|
+    t.json "response"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "histories", force: :cascade do |t|
@@ -29,6 +36,7 @@ ActiveRecord::Schema[7.1].define(version: 2024_01_12_024116) do
     t.datetime "assigned_at"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.boolean "is_resolve"
     t.index ["agent_id"], name: "index_histories_on_agent_id"
     t.index ["queue_chat_id"], name: "index_histories_on_queue_chat_id"
   end

@@ -1,6 +1,11 @@
 Rails.application.routes.draw do
-  get "test" => "agents#test"
-  resources :queue_chats
+  resources :caa_webhook_logs
+  get "test" => "caa_webhook#list_available_agent"
+  get "test/agent" => "agents#test"
+  resources :queue_chats do
+    # resolve with params id
+    get "resolve" => "queue_chats#resolve"
+  end
   resources :agents
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 

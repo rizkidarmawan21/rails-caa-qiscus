@@ -1,14 +1,25 @@
 <p style="color: green"><%= notice %></p>
 
 <h1>Queue chats</h1>
-
+<%= link_to "New queue chat", new_queue_chat_path %>
+<br>
+<br>
 <div id="queue_chats">
   <% @queue_chats.each do |queue_chat| %>
     <%= render queue_chat %>
     <p>
       <%= link_to "Show this queue chat", queue_chat %>
     </p>
+    <% if queue_chat.history&.is_resolve == false or !queue_chat.history   %> 
+      <p>
+        <%= link_to "Resolve", queue_chat_resolve_path(queue_chat.id) %>
+      </p>
+    <% end %>
+
+    <br>
+    <br>
+    <br>
   <% end %>
 </div>
 
-<%= link_to "New queue chat", new_queue_chat_path %>
+
